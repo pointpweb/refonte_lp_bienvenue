@@ -1,0 +1,873 @@
+<!-- RESET CSS - START -->
+<style>
+
+    .c-wysiwyg * {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+
+    .font-open-sans .section .section-title,
+    .font-open-sans .block-wysiwyg h2,
+    .font-open-sans .block-wysiwyg p {
+        font-family: "Open Sans", sans-serif;
+    }
+
+    /***** Global spaces - START *****/
+    .page-template-builder .block-template-builder .container,
+    .page-template-builder .block-template-builder,
+    .tw-px-6,
+    .page-template-builder,
+    .section-simple-block-text .container,
+    .block-wysiwyg p,
+    .block-wysiwyg ol li, 
+    .block-wysiwyg ul li,
+    .c-wysiwyg li,
+    .c-wysiwyg ul {
+        padding: 0;
+    }
+
+    .page-template-builder .section-template-builder, 
+    .page-template-builder .block-template-builder,
+    .tw-container,
+    .tw-my-4,
+    #status-messages-placeholder,
+    .section-simple-block-text .container,
+    .section-simple-block-text .section-title,
+    .block-wysiwyg img,
+    .block-wysiwyg img:not([data-not-responsive="1"]),
+    .block-wysiwyg ol, 
+    .block-wysiwyg ul,
+    .block-wysiwyg ul li:before,
+    .c-wysiwyg h1,
+    .c-wysiwyg h2,
+    .c-wysiwyg h3,
+    .c-wysiwyg h4,
+    .c-wysiwyg li,
+    .c-wysiwyg ul,
+    .c-wysiwyg p,
+    .block-wysiwyg h1,
+    .block-wysiwyg h2,
+    .block-wysiwyg h3,
+    .block-wysiwyg h4,
+    .block-wysiwyg li,
+    .block-wysiwyg ul, 
+    .block-wysiwyg p {
+        margin: 0;
+    }
+
+    .tw-container,
+    .section-simple-block-text .container {
+        max-width: 1480px;
+    }
+    /***** Global spaces - END *****/
+
+    /***** Breadcrumb - START *****/
+    .builder-header:not(#builderHeader) {
+        display: none;
+    }
+
+    .block.block-breadcrumb {
+        width: 100%;
+        margin: 0 0 8px;
+    }
+
+    @media (min-width: 768px) {
+        .block.block-breadcrumb {
+            margin: 8px 40px;
+        }
+
+        .block.block-breadcrumb .container {
+            padding: 0;
+        }
+    }
+    
+    .block-breadcrumb ul {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        white-space: normal;
+    }
+    
+    .block-breadcrumb .breadcrumb li:first-child {
+        display: block;
+    }
+
+    .block-breadcrumb .breadcrumb li:not(:first-child) {
+        display: flex;
+        align-items: center;
+        margin-left: 8px;
+        column-gap: 8px;
+    }
+
+    .block-breadcrumb li:before {
+        position: unset;
+        left: unset;
+        bottom: unset;
+    }
+    
+    .block-breadcrumb + #status-messages-placeholder {
+        margin: 0;
+    }
+    /***** Breadcrumb - END *****/
+</style>
+<!-- RESET CSS - END -->
+
+<!-- GLOBAL STYLES - START -->
+<style>
+    /****** Main - START *****/
+    .lpMain {
+        font-family: "Open Sans", sans-serif;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+        padding: 56px 20px;
+        font-size: .875rem;
+        line-height: 1.375rem;
+        color: #333333;
+    }
+
+    @media (min-width: 768px) {
+        .lpMain {
+            padding: 56px 40px;
+            font-size: 1rem;
+            line-height: 1.5rem;
+        } 
+    }
+
+    /*** <p></p> ***/
+    p.lpText {
+        font-size: .875rem;
+        line-height: 1.375rem;
+        color: #333333;
+    }
+
+    @media (min-width: 768px) {
+        p.lpText {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        } 
+    }
+    /****** Main - END *****/
+
+
+    /***** Titles - START *****/
+
+    /*** <h1></h1> ***/
+    .lpTitle__h1--promo,
+    .section-title,
+    .section .section-title {
+        width: 100%;
+        padding: 16px 20px;
+        background-color: #FFCC00;
+        text-align: center;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    
+    @media (min-width: 768px) {
+        .lpTitle__h1--promo,
+        .section-title,
+        .section .section-title {
+            padding: 16px 40px;
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+    }
+
+    /*** <h2></h2> ***/
+    /* Utiliser la classe "lpTitle__h2" sur les balises <h2> */
+    .lpTitle__h2,
+    .block-wysiwyg h2 *,
+    .block-wysiwyg h2,
+    .c-wysiwyg h2 {
+        font-size: 1rem;
+        line-height: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    
+    @media (min-width: 768px) {
+        .lpTitle__h2,
+        .block-wysiwyg h2 *,
+        .block-wysiwyg h2,
+        .c-wysiwyg h2  {
+            font-size: 1.125rem;
+            line-height: 1.125rem;
+        }
+    }
+    
+    /** h2 highlighted **/
+    /* Utiliser la classe "lpTitle__h2span" sur des balise span dans les h2 surlignés et leurs identifiers "--black" / "--orange" */
+    .lpTitle__h2span {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        padding: 6px;
+        color: #FFFFFF;
+    }
+    
+    .lpTitle__h2span--black {
+        background-color: #000000;
+    }
+    
+    .lpTitle__h2span--orange {
+        background-color: #E75012;
+    }
+
+    /*** <h3></h3> ***/
+    /* Utiliser la classe "lpTitle__h3" sur les balises <h3> */
+    
+    .lpTitle__h3,
+    .c-wysiwyg h3,
+    .block-wysiwyg h3 {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+    }
+    
+    @media (min-width: 768px) {
+        .lpTitle__h3,
+        .c-wysiwyg h3,
+        .block-wysiwyg h3 {
+            font-size: 1.125rem;
+            line-height: 1.625rem;
+        }
+    }
+    /***** Titles - END *****/
+
+    /****** Images - START *****/
+    .lpImage--mobile {
+        display: block;
+    }
+
+    .lpImage--desktop {
+        display: none;
+    }
+    
+    @media (min-width: 768px) {
+        .lpImage--mobile {
+            display: none;
+        }
+
+        .lpImage--desktop {
+            display: block;
+        }
+    }
+    /****** Images - END *****/
+
+    /***** CTAS - START *****/
+        
+    /* Utiliser la classe "lpCTA" sur les ctas et ses identifiers "--primary" / "--secondary" */
+    .lpCTA,
+    .c-wysiwyg a.lpCTA,
+    .block-wysiwyg a.lpCTA {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        min-width: 200px;
+        min-height: 40px;
+        padding: 16px 26px;
+        text-align: center;
+        font-weight: 700;
+        font-size: .875rem;
+        line-height: .75rem;
+        border-radius: 26px;
+        transition: all .3s ease-out; 
+        text-decoration-line: none;
+    }
+    
+    @media (min-width: 768px) {
+        .lpCTA,
+        .c-wysiwyg a.lpCTA,
+        .block-wysiwyg a.lpCTA {
+            font-size: 1rem;
+            line-height: .875rem;
+            min-height: 46px;
+        }
+    }
+    
+    .lpCTA--primary,
+    .block-wysiwyg a.lpCTA--primary,
+    .c-wysiwyg a.lpCTA--primary {
+        background-color: #e75012;
+        color: #FFFFFF;
+    }
+
+    @media (min-width: 768px) {
+        .lpCTA--primary:hover,
+        .block-wysiwyg a.lpCTA--primary:hover,
+        .block-wysiwyg a.lpCTA--primary:not(.is-disabled):hover,
+        .c-wysiwyg a.lpCTA--primary:hover,
+        .c-wysiwyg a.lpCTA--primary:not(.is-disabled):hover {
+            background-color: #EF855A;
+            color: #FFFFFF;
+        }
+    }
+    
+    .lpCTA--secondary,
+    .block-wysiwyg a.lpCTA--secondary,
+    .c-wysiwyg a.lpCTA--secondary {
+        background-color: #000000;
+        color: #FFFFFF;
+        border: 1px solid #000000;
+    }
+
+    @media (min-width: 768px) {
+        .lpCTA--secondary:hover,
+        .block-wysiwyg a.lpCTA--secondary:hover,
+        .block-wysiwyg a.lpCTA--secondary:not(.is-disabled):hover,
+        .c-wysiwyg a.lpCTA--secondary:hover,
+        .c-wysiwyg a.lpCTA--secondary:not(.is-disabled):hover {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+    }
+
+    .lpCTA--tertiary,
+    .block-wysiwyg a.lpCTA--tertiary,
+    .c-wysiwyg a.lpCTA--tertiary {
+        background-color: #FFFFFF;
+        color: #000000;
+        border: 1px solid #000000;
+    }
+
+    @media (min-width: 768px) {
+        .lpCTA--tertiary:hover,
+        .block-wysiwyg a.lpCTA--tertiary:hover,
+        .block-wysiwyg a.lpCTA--tertiary:not(.is-disabled):hover,
+        .c-wysiwyg a.lpCTA--tertiary:hover,
+        .c-wysiwyg a.lpCTA--tertiary:not(.is-disabled):hover {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+    }
+
+    .lpCTA--quaternary,
+    .block-wysiwyg a.lpCTA--quaternary,
+    .c-wysiwyg a.lpCTA--quaternary {
+        border-radius: 4px;
+        background-color: #FFFFFF;
+        color: #000000;
+        border: 1px solid #000000;
+    }
+
+    @media (min-width: 768px) {
+        .lpCTA--quaternary:hover,
+        .block-wysiwyg a.lpCTA--quaternary:hover,
+        .block-wysiwyg a.lpCTA--quaternary:not(.is-disabled):hover
+        .c-wysiwyg a.lpCTA--quaternary:hover,
+        .c-wysiwyg a.lpCTA--quaternary:not(.is-disabled):hover {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+    }
+
+    /*** CTA + Icon - START ***/
+    .lpCTA--icon,
+    .c-wysiwyg a.lpCTA--icon,
+    .block-wysiwyg a.lpCTA--icon {
+        column-gap: 8px;
+    }
+
+    .lpCTA--icon::before,
+    .c-wysiwyg a.lpCTA--icon::before,
+    .block-wysiwyg a.lpCTA--icon::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Icon mail - START */
+    .lpCTA--icon:not(.lpCTA--tertiary).icon--mail::before,
+    .c-wysiwyg a.lpCTA--icon:not(.lpCTA--tertiary).icon--mail::before {
+        background-image: url("/s/imgs/pages/landing-global/icon_mail_white.svg");
+    }
+
+    .lpCTA--icon.lpCTA--tertiary.icon--mail::before,
+    .c-wysiwyg a.lpCTA--icon.lpCTA--tertiary.icon--mail::before {
+        background-image: url("/s/imgs/pages/landing-global/icon_mail_black.svg");
+    }
+
+    @media (min-width: 768px) {
+        .lpCTA--secondary.lpCTA--icon.icon--newTab:hover::before,
+        .c-wysiwyg a.lpCTA--secondary.lpCTA--icon.icon--newTab:hover::before {
+            background-image: url("/s/imgs/pages/landing-global/icon_mail_black.svg");
+        }
+    }
+
+    @media (min-width: 768px) {
+        .lpCTA--tertiary.lpCTA--icon.icon--newTab:hover::before,
+        .c-wysiwyg a.lpCTA--tertiary.lpCTA--icon.icon--newTab:hover::before {
+            background-image: url("/s/imgs/pages/landing-global/icon_mail_white.svg");
+        }
+    }
+    /* Icon mail - END */
+
+    /* Icon new tab - START */
+    .lpCTA--icon:not(.lpCTA--tertiary).icon--newTab::before,
+    .c-wysiwyg a.lpCTA--icon:not(.lpCTA--tertiary).icon--newTab::before {
+        background-image: url("/s/imgs/pages/landing-global/icon_new_tab_white.svg");
+    }
+
+    .lpCTA--icon.lpCTA--tertiary.icon--newTab::before,
+    .c-wysiwyg a.lpCTA--icon.lpCTA--tertiary.icon--newTab::before {
+        background-image: url("/s/imgs/pages/landing-global/icon_new_tab_black.svg");
+    }
+
+    @media (min-width: 768px) {
+        .lpCTA--secondary.lpCTA--icon.icon--newTab:hover::before,
+        .c-wysiwyg a.lpCTA--secondary.lpCTA--icon.icon--newTab:hover::before {
+            background-image: url("/s/imgs/pages/landing-global/icon_new_tab_black.svg");
+        }
+    }
+
+    @media (min-width: 768px) {
+        .lpCTA--tertiary.lpCTA--icon.icon--newTab:hover::before,
+        .c-wysiwyg a.lpCTA--tertiary.lpCTA--icon.icon--newTab:hover::before {
+            background-image: url("/s/imgs/pages/landing-global/icon_new_tab_white.svg");
+        }
+    }
+    /* Icon new tab - END */
+
+    /* Icon copy/past - START */
+    .lpCTA--icon:not(.lpCTA--tertiary, .lpCTA--quaternary).icon--copyPast::before,
+    .c-wysiwyg a.lpCTA--icon:not(.lpCTA--tertiary, .lpCTA--quaternary).icon--copyPast::before {
+        background-image: url("/s/imgs/pages/landing-global/icon_copy_past_white.svg");
+    }
+
+    .lpCTA--icon.lpCTA--tertiary.icon--copyPast::before,
+    .c-wysiwyg a.lpCTA--icon.lpCTA--tertiary.icon--copyPast::before, 
+    .lpCTA--icon.lpCTA--quaternary.icon--copyPast::before,
+    .c-wysiwyg a.lpCTA--icon.lpCTA--quaternary.icon--copyPast::before {
+        background-image: url("/s/imgs/pages/landing-global/icon_copy_past_black.svg");
+    }
+
+    @media (min-width: 768px) {
+        .lpCTA--secondary.lpCTA--icon.icon--copyPast:hover::before,
+        .c-wysiwyg a.lpCTA--secondary.lpCTA--icon.icon--copyPast:hover::before {
+            background-image: url("/s/imgs/pages/landing-global/icon_copy_past_black.svg");
+        }
+    }
+
+    @media (min-width: 768px) {
+        .lpCTA--tertiary.lpCTA--icon.icon--copyPast:hover::before,
+        .c-wysiwyg a.lpCTA--tertiary.lpCTA--icon.icon--copyPast:hover::before,
+        .lpCTA--icon.lpCTA--quaternary.icon--copyPast:hover::before,
+        .c-wysiwyg a.lpCTA--icon.lpCTA--quaternary.icon--copyPast:hover::before  {
+            background-image: url("/s/imgs/pages/landing-global/icon_copy_past_white.svg");
+        }
+    }
+    /* Icon copy/past - END */
+
+    /*** CTA + Icon - END ***/
+
+    /*** Block CTA - START ***/
+    .lpBlock__CTA {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        align-items: center;
+    }
+
+    @media (min-width: 768px) {
+        .lpBlock__CTA {
+            flex-direction: row;
+            column-gap: 16px;
+            justify-content: center;
+        }
+    }
+    /** Block CTA - END **/
+
+    /***** CTAS - END *****/
+
+    /***** Lists *****/
+    
+    /*** <ol></ol> / <ul></ul> ***/
+    /* Utiliser la classe "lpList" sur les balises <ol>/<ul> */
+    
+    .lpList {
+        overflow: visible;
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        font-size: .875rem;
+        line-height: 1.375rem;
+    }
+    
+    @media (min-width: 768px) {
+        .lpList {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+    }
+    
+    /*** <li></li> ***/
+    /* Utiliser la classe "lpList__item" sur les balises <li> */
+    
+    /*** <li></li> ***/
+    /* Utiliser la classe "lpList__item" sur les balises <li> */
+    .lpList__item,
+    .block-wysiwyg ul li.lpList__item,
+    .c-wysiwyg li.lpList__item {
+        position: relative;
+        padding-left: 24px;
+        font-size: .875rem;
+        line-height: 1.375rem;
+    }
+
+    @media (min-width: 768px) {
+        .lpList__item,
+        .block-wysiwyg ul li.lpList__item,
+        .c-wysiwyg li.lpList__item {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        } 
+    }
+    
+    .lpList__item::before,
+    .block-wysiwyg ul li.lpList__item:before,
+    .c-wysiwyg ul li.lpList__item:before {
+        content: "";
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: #E75012;
+        position: absolute; 
+        left: 8px;
+        top: 8px;
+    }
+
+    /***** Links *****/
+    
+    /* Utiliser la classe "lpLink" sur les balises <a> pour les liens textuels et son identifier "--uppercase" */
+    .lpLink,
+    .c-wysiwyg a.lpLink,
+    .block-wysiwyg a.lpLink {
+        width: fit-content;
+        color: #333333;
+        text-decoration: underline;
+        font-size: .875rem;
+        line-height: 1.125rem;
+        font-weight: 600;
+        transition: all .3s ease-out;
+    }
+    
+    @media (min-width: 768px) {
+        .lpLink,
+        .c-wysiwyg a.lpLink,
+        .block-wysiwyg a.lpLink {
+            font-size: 1rem;
+            line-height: 1.125rem;
+            width: 100%;
+        }
+    
+        .lpLink:hover,
+        .c-wysiwyg a.lpLink:hover,
+        .c-wysiwyg a.lpLink:not(.is-disabled):hover,
+        .block-wysiwyg a.lpLink:hover,
+        .block-wysiwyg a.lpLink:not(.is-disabled):hover {
+            color: #333333;
+            -webkit-text-decoration-line: underline;
+            text-decoration: underline;
+            text-decoration-thickness: 15% !important;
+        }
+    }
+</style>
+<!-- GLOBAL STYLES - END -->
+
+<!-- PROMO STYLES - START -->
+<style>
+    .lpSection--promo {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+
+    .lpArticle--promo {
+        border: 8px dashed #FFCC00;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 16px;
+        padding: 32px;
+    }
+
+    @media (min-width: 768px) {
+        .lpArticle--promo {
+            flex-direction: row;
+            column-gap: 16px;
+        }
+    }
+
+
+    .lpArticle--promo .desc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+        .lpArticle--promo .desc {
+            width: 100%;
+        }
+    }
+
+    .lpMain p.lpText--promo,
+    .block-wysiwyg .lpMain p.lpText--promo {
+        font-size: 1.25rem;
+        line-height: 1.875rem;
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+
+    .lpText--promo span {
+        color: #e75012;
+    }
+
+    .lpAside--promoConditions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        column-gap: 8px;
+        row-gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+        .lpAside--promoConditions {
+            cursor: pointer;
+            column-gap: 16px;
+        } 
+    }
+
+    .lpAside--promoConditions .lpText,
+    .font-open-sans .block-wysiwyg .lpAside--promoConditions p.lpText {
+        font-style: italic;
+        width: calc(100% - 24px);
+    }
+
+    @media (min-width: 768px) {
+        .lpAside--promoConditions .lpText,
+        .font-open-sans .block-wysiwyg .lpAside--promoConditions p.lpText {
+            width: fit-content;
+            max-width: calc(100% - 32px);
+        }
+    }
+
+    .lpAside--promoConditions .lpText span {
+        color: #e75012;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    .lpMain .lpAside--promoConditions ul.lpList,
+    .block-wysiwyg .lpMain .lpAside--promoConditions ul.lpList {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: all .3s ease-out;
+        font-size: .875rem;
+        line-height: 1.375rem;
+        opacity: 0;
+
+    }
+
+    .lpMain .lpAside--promoConditions.open ul.lpList,
+    .block-wysiwyg .lpMain .lpAside--promoConditions.open ul.lpList  {
+        max-height: 500px;
+        overflow: visible;
+        opacity: 1;
+    }
+
+    .lpAside--promoConditions .ctaMoreLess .verticalLine {
+        transition: all .3s ease-out;
+    }
+
+    .lpAside--promoConditions.open .ctaMoreLess .verticalLine {
+        opacity: 0;
+    }
+
+    @media (min-width: 768px) {
+        .lpAside--promoConditions:hover .ctaMoreLess circle {
+            fill: #E75012;
+        }
+
+        .lpAside--promoConditions:hover .ctaMoreLess line {
+            stroke: #FFFFFF;
+        }
+    }
+
+    /***** Info message - START *****/
+    .lpMessage {
+        z-index: -1;
+        opacity: 0;
+        background-color: aquamarine;
+        transition: all .3s ease-out;
+        position: fixed;
+        top: 250px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #F6F6F6;
+        transition: all .3s ease-out;
+        padding: 16px;
+        border-radius: 0 10px 10px 10px;
+        font-weight: 700;
+        border: 4px solid #000000;
+    }
+
+    .lpMessage.visible {
+        z-index: 1;
+        opacity: 1;
+    }
+    /***** Info message - END *****/
+</style>
+<!-- PROMO STYLES - END -->
+
+<div class="lpMain lpMain--bienvenue">
+    <!-- ENCART PROMO - START -->
+    <section class="lpSection lpSection--promo">
+        <h2 class="lpTitle__h2">
+            <span class="lpTitle__h2span lpTitle__h2span--black">
+                Exclu web
+            </span>
+            <span class="lpTitle__h2span lpTitle__h2span--orange">
+                Du 01 au 30 avril 2025
+            </span>
+        </h2>
+        <article class="lpArticle lpArticle--promo">
+            <section class="desc">
+                <p class="lpText lpText--promo">
+                    Profitez de <span>-5€</span> (HT) tous les 50€ (HT) et jusqu'à 3000€ d'achat avec le code :
+                </p>
+                <a data-text="AMEX80" class="lpCTA lpCTA--quaternary lpCTA--icon icon--copyPast">
+                    CIMENT5
+                </a>
+            </section>
+            <section id="confirmationMessage" class="lpMessage lpMessage--confirmation">
+                <p class="lpText">Le code promo a bien été copié !</p>
+            </section>
+        </article>
+        <aside id="promoConditions" class="lpAside lpAside--promoConditions">
+            <p class="lpText lpText--small">Offres valable du 01 au 30 avril 2025, uniquement sur le site pointp.fr et l’application mobile POINT.P, <span class="lpLink">voir conditions</span></p>
+            <svg class="ctaMoreLess" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="6.5" cy="6.71338" r="6" stroke="#E75012"/>
+                <line class="verticalLine" x1="6.61108" y1="3.21338" x2="6.61108" y2="10.2134" stroke="#E75012"/>
+                <line class="horizontalLine" x1="10" y1="6.82446" x2="3" y2="6.82446" stroke="#E75012"/>
+            </svg>
+            <ul class="lpList">
+                <p class="lpText">Code promo non éligible :</p>
+                <li class="lpList__item">Sur les produits concernés par les opérations commerciales en cours.</li>
+                <li class="lpList__item">Sur les produits en barème quantité (« prix dégressif » sur le site).</li>
+                <li class="lpList__item">Sur les tarifs collaborateurs.</li>
+                <li class="lpList__item">Sur les frais de livraison.</li>
+                <li class="lpList__item">Sur la validation des devis en ligne.</li>
+            </ul>
+        </aside>
+    </section>
+    <!-- ENCART PROMO - END -->
+
+    <h1 class="lpTitle__h1">Hello World</h1>
+    <h2 class="lpTitle__h2">
+        <span class="lpTitle__h2span lpTitle__h2span--black">
+            Hello
+        </span>
+        <span class="lpTitle__h2span lpTitle__h2span--orange">
+            World
+        </span>
+    </h2>
+    <h3 class="lpTitle__h3">Hello World</h3>
+    <p class="lpText">Hello World</p>
+    <ul class="lpList">
+        <li class="lpList__item">Hello World</li>
+        <li class="lpList__item">Hello World</li>
+        <li class="lpList__item">Hello World</li>
+    </ul>
+    <a href="" class="lpLink">Hello World</a>
+    <a href="" class="lpCTA lpCTA--primary">Hello World</a>
+    <a href="" class="lpCTA lpCTA--secondary">Hello World</a>
+    <a href="" class="lpCTA lpCTA--tertiary">Hello World</a>
+    <a href="" class="lpCTA lpCTA--quaternary">Hello World</a>
+    <a href="" class="lpCTA lpCTA--primary lpCTA--icon icon--copyPast">Hello World</a>
+</div>
+
+<!-- JS - START -->
+<script defer>
+
+    /***** Affichage des conditions - START *****/
+    document.addEventListener("DOMContentLoaded", function () {
+        // Sélectionne tous les éléments avec la classe "lpAside--promoConditions"
+        var promoConditionsElements = document.querySelectorAll('.lpAside--promoConditions');
+
+        // Ajoute un écouteur d'événement à chaque élément
+        promoConditionsElements.forEach(function (element) {
+            element.addEventListener("click", function () {
+                // Vérifie si l'élément cliqué a déjà la classe "open"
+                var isOpen = element.classList.contains('open');
+
+                // Retire la classe "open" de tous les éléments
+                promoConditionsElements.forEach(function (el) {
+                    el.classList.remove('open');
+                });
+
+                // Si l'élément cliqué n'avait pas la classe "open", on l'ajoute
+                if (!isOpen) {
+                    element.classList.add('open');
+                }
+            });
+        });
+    });
+    /***** Affichage des conditions - END *****/
+
+    /***** Copy text to clipboard - START *****/
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Function to copy text
+        function copyToClipboard(text) {
+            // Create a temporary element to hold the text
+            var tempElement = document.createElement("textarea");
+            tempElement.value = text;
+            document.body.appendChild(tempElement);
+
+            // Select and copy the text
+            tempElement.select();
+            document.execCommand("copy");
+
+            // Remove the temporary element
+            document.body.removeChild(tempElement);
+        }
+
+        // Add an event listener for each CTA button
+        var buttons = document.querySelectorAll('.icon--copyPast');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                var textToCopy = button.getAttribute('data-text');
+                copyToClipboard(textToCopy);
+                
+                // Display a confirmation message
+                var confirmationMessage = document.getElementById('confirmationMessage');
+                // confirmationMessage.style.display = 'block';
+                confirmationMessage.classList.add('visible');
+                
+                // Hide the message after 2 seconds
+                setTimeout(() => {
+                    // confirmationMessage.style.display = 'none';
+                    confirmationMessage.classList.remove('visible');
+                }, 2000);
+            });
+        });
+    });
+    /***** Copy text to clipboard - END *****/
+
+</script>
+<!-- JS - END -->
